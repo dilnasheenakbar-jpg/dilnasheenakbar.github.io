@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dilnasheen Akbar · AI Automation Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #FAF7F2;
+  --bg2: #F3EDE3;
+  --card: #FFFFFF;
+  --border: #E8DDD0;
+  --text: #2C2416;
+  --muted: #8C7B68;
+  --accent: #C17F3E;
+  --accent2: #7C5C3E;
+  --accent-light: #F0E4D0;
+  --green: #5A7A52;
+  --font-disp: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:rgba(250,247,242,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--font-disp);font-size:1.1rem;font-weight:600;color:var(--text);}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-size:0.82rem;font-weight:500;color:var(--muted);letter-spacing:0.04em;transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{font-size:0.82rem;font-weight:600;padding:0.55rem 1.4rem;background:var(--accent);color:#fff;border-radius:50px;transition:opacity 0.2s,transform 0.2s;}
+.nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+
+.container{max-width:1080px;margin:0 auto;padding:0 2rem;}
+section{position:relative;}
+
+#hero{padding:9rem 0 5rem;}
+.hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;background:var(--accent-light);padding:0.35rem 0.9rem;border-radius:50px;margin-bottom:1.5rem;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+h1{font-family:var(--font-disp);font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:700;line-height:1.15;letter-spacing:-0.01em;margin-bottom:1.2rem;color:var(--text);}
+.h1-accent{color:var(--accent);}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;max-width:440px;}
+.hero-actions{display:flex;gap:0.9rem;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:0.45rem;padding:0.8rem 1.8rem;background:var(--accent);color:#fff;font-weight:600;font-size:0.88rem;border-radius:50px;transition:opacity 0.2s,transform 0.2s;}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.45rem;padding:0.8rem 1.8rem;border:1.5px solid var(--border);color:var(--text);font-weight:500;font-size:0.88rem;border-radius:50px;transition:border-color 0.2s;}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+.hero-photo-wrap{display:flex;justify-content:center;align-items:center;position:relative;}
+.hero-photo{width:340px;height:360px;border-radius:20px;object-fit:cover;object-position:center top;border:3px solid var(--border);box-shadow:0 20px 60px rgba(44,36,22,0.1);background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-size:4rem;color:var(--accent);}
+.photo-badge{position:absolute;bottom:1.5rem;right:0;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:0.8rem 1.1rem;box-shadow:0 8px 24px rgba(44,36,22,0.08);display:flex;align-items:center;gap:0.6rem;}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;}
+.badge-text{font-family:var(--font-mono);font-size:0.68rem;color:var(--muted);}
+.badge-text strong{color:var(--text);display:block;font-size:0.75rem;}
+
+.trust-bar{padding:2.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;gap:3rem;flex-wrap:wrap;}
+.trust-num{font-family:var(--font-disp);font-size:1.8rem;font-weight:700;color:var(--accent);}
+.trust-lbl{font-size:0.78rem;color:var(--muted);margin-top:0.1rem;}
+
+.eyebrow{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--accent);}
+h2{font-family:var(--font-disp);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:0.8rem;}
+.section-sub{font-size:0.95rem;color:var(--muted);max-width:500px;line-height:1.8;margin-bottom:3rem;}
+
+#services{padding:6rem 0;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.svc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:transform 0.25s,box-shadow 0.25s;}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(44,36,22,0.08);}
+.svc-icon{font-size:1.8rem;margin-bottom:1rem;display:block;}
+.svc-title{font-family:var(--font-disp);font-size:1rem;font-weight:600;margin-bottom:0.5rem;}
+.svc-desc{font-size:0.83rem;color:var(--muted);line-height:1.75;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:1rem;}
+.tag{font-family:var(--font-mono);font-size:0.62rem;padding:0.2rem 0.55rem;border:1px solid var(--border);border-radius:4px;color:var(--muted);}
+
+#skills{padding:6rem 0;background:var(--bg2);}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.skill-item{margin-bottom:1.1rem;}
+.skill-row{display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.83rem;font-weight:500;}
+.skill-pct{color:var(--muted);font-family:var(--font-mono);font-size:0.72rem;}
+.skill-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.skill-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:2px;}
+.skill-group-label{font-family:var(--font-mono);font-size:0.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.9rem;margin-top:1.5rem;}
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.9rem;}
+.tech-pill{display:flex;flex-direction:column;align-items:center;gap:0.4rem;padding:1rem 0.6rem;border:1px solid var(--border);border-radius:10px;background:var(--card);text-align:center;transition:border-color 0.2s,transform 0.2s;cursor:default;}
+.tech-pill:hover{border-color:var(--accent);transform:translateY(-3px);}
+.tech-emoji{font-size:1.4rem;}
+.tech-name{font-size:0.62rem;color:var(--muted);font-family:var(--font-mono);}
+
+#workflows{padding:6rem 0;}
+.wf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+.wf-card{border:1px solid var(--border);border-radius:12px;padding:1.6rem;background:var(--card);transition:border-color 0.25s,transform 0.25s;}
+.wf-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+.wf-number{font-family:var(--font-mono);font-size:0.62rem;color:var(--accent);opacity:0.6;margin-bottom:0.6rem;}
+.wf-title{font-family:var(--font-disp);font-size:0.92rem;font-weight:600;margin-bottom:0.5rem;}
+.wf-desc{font-size:0.8rem;color:var(--muted);line-height:1.7;}
+.wf-stack{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.8rem;}
+.wf-tag{font-family:var(--font-mono);font-size:0.58rem;padding:0.18rem 0.45rem;background:var(--accent-light);border-radius:3px;color:var(--accent2);}
+
+.wf-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3.5rem;}
+.wf-diagram{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2rem;}
+.wf-diagram-title{font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.5rem;}
+.flow-node{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border:1px solid var(--border);border-radius:6px;margin-bottom:0.4rem;font-size:0.73rem;background:var(--bg2);}
+.flow-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.dot-trigger{background:var(--accent);}
+.dot-process{background:var(--accent2);}
+.dot-ai{background:#C17F3E;}
+.dot-output{background:var(--green);}
+.flow-arrow{font-size:0.6rem;color:var(--muted);padding-left:1.3rem;margin-bottom:0.25rem;}
+
+#cases{padding:6rem 0;background:var(--bg2);}
+.cases-grid{display:grid;gap:1.5rem;}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2.2rem;display:grid;grid-template-columns:1.1fr 2fr 1fr;gap:2rem;align-items:start;transition:box-shadow 0.25s;}
+.case-card:hover{box-shadow:0 12px 36px rgba(44,36,22,0.08);}
+.case-label{font-family:var(--font-mono);font-size:0.62rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;}
+.case-title{font-family:var(--font-disp);font-size:1.05rem;font-weight:600;line-height:1.3;margin-bottom:0.35rem;}
+.case-industry{font-size:0.75rem;color:var(--muted);}
+.case-sub-label{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.4rem;}
+.case-body{font-size:0.84rem;line-height:1.75;color:var(--text);}
+.case-results{display:flex;flex-direction:column;gap:0.8rem;}
+.result-item{padding:0.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg2);}
+.result-num{font-family:var(--font-disp);font-size:1.4rem;font-weight:700;color:var(--green);}
+.result-desc{font-size:0.72rem;color:var(--muted);margin-top:0.1rem;}
+
+#testimonials{padding:6rem 0;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.8rem;transition:transform 0.25s;}
+.testi-card:hover{transform:translateY(-4px);}
+.stars{color:var(--accent);font-size:0.75rem;margin-bottom:1rem;}
+.testi-quote{font-size:0.87rem;line-height:1.8;color:var(--text);margin-bottom:1.4rem;position:relative;padding-left:1rem;}
+.testi-quote::before{content:'"';position:absolute;left:0;top:-0.2rem;font-size:1.8rem;color:var(--accent);line-height:1;font-family:var(--font-disp);}
+.testi-author{display:flex;align-items:center;gap:0.8rem;}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-weight:700;font-size:0.82rem;color:var(--accent);flex-shrink:0;}
+.testi-name{font-size:0.84rem;font-weight:600;}
+.testi-role{font-size:0.72rem;color:var(--muted);margin-top:0.1rem;}
+
+#contact{padding:6rem 0;background:var(--bg2);}
+.contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.6rem;}
+.contact-icon{width:40px;height:40px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;background:var(--card);}
+.contact-label{font-size:0.7rem;color:var(--muted);margin-bottom:0.15rem;}
+.contact-value{font-size:0.88rem;font-weight:500;}
+.form-group{margin-bottom:1.1rem;}
+.form-label{display:block;font-size:0.7rem;color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.45rem;}
+.form-input,.form-textarea,.form-select{width:100%;padding:0.85rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--font-body);font-size:0.88rem;outline:none;transition:border-color 0.2s;appearance:none;}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--accent);}
+.form-textarea{resize:vertical;min-height:110px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.submit-btn{width:100%;padding:0.95rem;background:var(--accent);color:#fff;font-family:var(--font-disp);font-weight:600;font-size:0.95rem;border:none;border-radius:50px;cursor:pointer;transition:opacity 0.2s,transform 0.2s;margin-top:0.4rem;}
+.submit-btn:hover{opacity:0.88;transform:translateY(-1px);}
+
+footer{padding:2.5rem 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-family:var(--font-disp);font-size:1rem;font-weight:600;}
+.footer-logo span{color:var(--accent);}
+.footer-links{display:flex;gap:1.8rem;}
+.footer-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:0.72rem;color:var(--muted);}
+
+.divider{height:1px;background:var(--border);}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-photo-wrap{display:none;}
+  .services-grid{grid-template-columns:1fr;}
+  .skills-layout{grid-template-columns:1fr;}
+  .wf-top{grid-template-columns:1fr;}
+  .wf-grid{grid-template-columns:1fr;}
+  .case-card{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .contact-layout{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;gap:1.2rem;text-align:center;}
+  .trust-bar{gap:1.5rem;}
+}
+@media(max-width:600px){
+  h1{font-size:2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .tech-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dilnasheen<span>.</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
+    <a href="#workflows">Workflows</a>
+    <a href="#cases">Work</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Available for new projects</div>
+        <h1>Hi, I'm Dilnasheen.<br>I Build <span class="h1-accent">Smart<br>Automations</span> for<br>Growing Businesses.</h1>
+        <p class="hero-sub">
+          AI Automation Specialist helping small businesses and freelancers save time and money
+          by automating their everyday workflows — using n8n, AI tools, and smart integrations.
+        </p>
+        <div class="hero-actions">
+          <a href="#cases" class="btn-primary">See My Work →</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">DA</div>
+        <div class="photo-badge">
+          <div class="badge-dot"></div>
+          <div class="badge-text">
+            <strong>Open to Work</strong>
+            Remote · Worldwide
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-bar reveal">
+      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Clients Helped</div></div>
+      <div class="trust-item"><div class="trust-num">20+</div><div class="trust-lbl">Automations Built</div></div>
+      <div class="trust-item"><div class="trust-num">100s</div><div class="trust-lbl">Hours Saved for Clients</div></div>
+      <div class="trust-item"><div class="trust-num">n8n</div><div class="trust-lbl">Primary Platform</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="services">
+  <div class="container">
+    <div class="eyebrow">What I Offer</div>
+    <h2>Services I Provide</h2>
+    <p class="section-sub">
+      Practical automations that actually work — no over-engineering, no fluff.
+      I focus on solving real problems that eat up your time.
+    </p>
+    <div class="services-grid reveal">
+      <div class="svc-card">
+        <span class="svc-icon">⚡</span>
+        <div class="svc-title">Workflow Automation</div>
+        <p class="svc-desc">Connect your apps and automate repetitive tasks so things happen automatically — no more copy-pasting between tools.</p>
+        <div class="svc-tags"><span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Zapier</span></div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🤖</span>
+        <div class="svc-title">AI Chatbots</div>
+        <p class="svc-desc">Simple AI-powered bots for WhatsApp, websites, or Slack that answer common questions and save your team time.</p>
+        <div class="svc-tags"><span class="tag">WhatsApp API</span><span class="tag">OpenAI</span><span class="tag">n8n</span></div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">📧</span>
+        <div class="svc-title">Email & Lead Automation</div>
+        <p class="svc-desc">Auto-send follow-up emails, collect leads from forms, and notify your team instantly — all without lifting a finger.</p>
+        <div class="svc-tags"><span class="tag">Gmail</span><span class="tag">Notion</span><span class="tag">GSheets</span></div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">📱</span>
+        <div class="svc-title">Social Media Automation</div>
+        <p class="svc-desc">Schedule posts, auto-reply to comments, and collect analytics from multiple platforms — all automated.</p>
+        <div class="svc-tags"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">n8n</span></div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🔗</span>
+        <div class="svc-title">App Integrations</div>
+        <p class="svc-desc">Connect tools that don't talk to each other — Notion, Airtable, Google Sheets, WhatsApp, Shopify, and more.</p>
+        <div class="svc-tags"><span class="tag">REST API</span><span class="tag">Webhooks</span><span class="tag">OAuth</span></div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">📊</span>
+        <div class="svc-title">Automated Reports</div>
+        <p class="svc-desc">Get daily or weekly reports about your business delivered to your inbox or WhatsApp — automatically generated.</p>
+        <div class="svc-tags"><span class="tag">GSheets</span><span class="tag">Airtable</span><span class="tag">Gmail</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow">My Stack</div>
+    <h2>Tools I Work With</h2>
+    <p class="section-sub">Honest skill levels — I work best with automation platforms and AI integrations.</p>
+    <div class="skills-layout reveal">
+      <div>
+        <div class="skill-group-label">Automation Platforms</div>
+        <div class="skill-item">
+          <div class="skill-row"><span>n8n</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Make (Integromat)</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Zapier</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+        <div class="skill-group-label">AI Tools</div>
+        <div class="skill-item">
+          <div class="skill-row"><span>OpenAI / ChatGPT</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>AI Prompt Engineering</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+        <div class="skill-group-label">Data & Integrations</div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Google Sheets / Airtable</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>REST APIs & Webhooks</span><span class="skill-pct">68%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Notion</span><span class="skill-pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-label">Tools & Platforms</div>
+        <div class="tech-grid">
+          <div class="tech-pill"><span class="tech-emoji">⚡</span><span class="tech-name">n8n</span></div>
+          <div class="tech-pill"><span class="tech-emoji">🤖</span><span class="tech-name">OpenAI</span></div>
+          <div class="tech-pill"><span class="tech-emoji">🔧</span><span class="tech-name">Make</span></div>
+          <div class="tech-pill"><span class="tech-emoji">⚡</span><span class="tech-name">Zapier</span></div>
+          <div class="tech-pill"><span class="tech-emoji">📋</span><span class="tech-name">Notion</span></div>
+          <div class="tech-pill"><span class="tech-emoji">📊</span><span class="tech-name">Airtable</span></div>
+          <div class="tech-pill"><span class="tech-emoji">📈</span><span class="tech-name">GSheets</span></div>
+          <div class="tech-pill"><span class="tech-emoji">📧</span><span class="tech-name">Gmail API</span></div>
+          <div class="tech-pill"><span class="tech-emoji">💬</span><span class="tech-name">Slack</span></div>
+          <div class="tech-pill"><span class="tech-emoji">📱</span><span class="tech-name">WhatsApp</span></div>
+          <div class="tech-pill"><span class="tech-emoji">🛒</span><span class="tech-name">Shopify</span></div>
+          <div class="tech-pill"><span class="tech-emoji">📅</span><span class="tech-name">GCal API</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="workflows">
+  <div class="container">
+    <div class="wf-top">
+      <div>
+        <div class="eyebrow">Automation Workflows</div>
+        <h2>Real Workflows<br>I've Built</h2>
+        <p class="section-sub" style="margin-bottom:0">
+          These are actual automation patterns I've worked on —
+          from simple notifications to AI-powered pipelines.
+        </p>
+      </div>
+      <div class="wf-diagram">
+        <div class="wf-diagram-title">// Example: Auto Lead Follow-up</div>
+        <div class="flow-node"><span class="flow-dot dot-trigger"></span>New form submission arrives</div>
+        <div class="flow-arrow">↓ extract info</div>
+        <div class="flow-node"><span class="flow-dot dot-process"></span>Save lead to Google Sheets</div>
+        <div class="flow-arrow">↓ notify team</div>
+        <div class="flow-node"><span class="flow-dot dot-ai"></span>Send Slack alert to sales team</div>
+        <div class="flow-arrow">↓ follow-up</div>
+        <div class="flow-node"><span class="flow-dot dot-output"></span>Auto-send welcome email to lead</div>
+        <div class="flow-arrow">↓ done ✓</div>
+        <div class="flow-node"><span class="flow-dot dot-output"></span>Log status in Notion CRM</div>
+      </div>
+    </div>
+    <div class="wf-grid reveal">
+      <div class="wf-card"><div class="wf-number">WF-01</div><div class="wf-title">Lead Capture & Follow-up</div><p class="wf-desc">Form fills → saves to Sheets → sends welcome email → notifies team on Slack. Fully automated.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Gmail</span><span class="wf-tag">GSheets</span><span class="wf-tag">Slack</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-02</div><div class="wf-title">WhatsApp AI Customer Bot</div><p class="wf-desc">Answers FAQs automatically on WhatsApp using AI. Escalates to human when needed.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">WhatsApp API</span><span class="wf-tag">OpenAI</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-03</div><div class="wf-title">Social Post Scheduler</div><p class="wf-desc">Write once in Notion → auto-publishes to Instagram and Facebook on schedule.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Notion</span><span class="wf-tag">Instagram API</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-04</div><div class="wf-title">Invoice Auto-Sender</div><p class="wf-desc">Project marked done in Notion → generates invoice → sends to client via email automatically.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Notion</span><span class="wf-tag">Gmail</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-05</div><div class="wf-title">Daily Business Summary</div><p class="wf-desc">Every morning: pulls sales, orders, and tasks — sends a clean summary to your WhatsApp.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">GSheets</span><span class="wf-tag">WhatsApp</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-06</div><div class="wf-title">Support Email Triage</div><p class="wf-desc">Incoming support emails → AI reads and sorts by urgency → routes to right team member.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Gmail</span><span class="wf-tag">OpenAI</span><span class="wf-tag">Slack</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-07</div><div class="wf-title">Shopify Order Notifications</div><p class="wf-desc">New Shopify order → sends branded confirmation email + WhatsApp message to customer.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Shopify</span><span class="wf-tag">Gmail</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-08</div><div class="wf-title">Meeting Notes to Tasks</div><p class="wf-desc">Paste meeting notes → AI extracts action items → creates Notion tasks and assigns them.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">OpenAI</span><span class="wf-tag">Notion</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-09</div><div class="wf-title">New Signup Onboarding</div><p class="wf-desc">User signs up → auto-send welcome email sequence → add to CRM → schedule intro call.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Gmail</span><span class="wf-tag">Calendly</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-10</div><div class="wf-title">Google Review Monitor</div><p class="wf-desc">New Google review appears → Slack alert with rating + content → team can respond fast.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Google API</span><span class="wf-tag">Slack</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-11</div><div class="wf-title">Content Repurposing</div><p class="wf-desc">Blog post added to Notion → AI creates 3 social captions + LinkedIn post → ready to publish.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">OpenAI</span><span class="wf-tag">Notion</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-12</div><div class="wf-title">Inventory Low-Stock Alert</div><p class="wf-desc">Shopify stock drops below limit → WhatsApp alert to owner with product details instantly.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Shopify</span><span class="wf-tag">WhatsApp</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-13</div><div class="wf-title">Job Application Screener</div><p class="wf-desc">CVs sent to email → AI reads and scores against job description → shortlist added to Notion.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">OpenAI</span><span class="wf-tag">Gmail</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-14</div><div class="wf-title">Appointment Reminder Bot</div><p class="wf-desc">Checks Calendly bookings → sends WhatsApp reminder 24hr and 1hr before each appointment.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Calendly</span><span class="wf-tag">WhatsApp</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-15</div><div class="wf-title">Airtable CRM Sync</div><p class="wf-desc">New enquiry from website form → added to Airtable CRM → sales team notified on WhatsApp.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Airtable</span><span class="wf-tag">WhatsApp</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-16</div><div class="wf-title">Competitor Price Tracker</div><p class="wf-desc">Checks competitor website prices weekly → logs changes in Sheets → alerts you if price drops.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Web Scraping</span><span class="wf-tag">GSheets</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-17</div><div class="wf-title">YouTube to Blog Post</div><p class="wf-desc">Upload YouTube video → transcribe with Whisper → AI writes blog post → draft saved in Notion.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Whisper</span><span class="wf-tag">OpenAI</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-18</div><div class="wf-title">Team Task Sync</div><p class="wf-desc">Tasks added in Notion → syncs to team Slack channel → updates when marked complete.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Notion</span><span class="wf-tag">Slack</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-19</div><div class="wf-title">Payment Received Notifier</div><p class="wf-desc">Stripe payment received → WhatsApp alert to owner → log to GSheets → send receipt to client.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">Stripe</span><span class="wf-tag">WhatsApp</span></div></div>
+      <div class="wf-card"><div class="wf-number">WF-20</div><div class="wf-title">AI Product Description</div><p class="wf-desc">Add product name + specs to Airtable → AI generates SEO description → pushed to Shopify.</p><div class="wf-stack"><span class="wf-tag">n8n</span><span class="wf-tag">OpenAI</span><span class="wf-tag">Shopify</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="cases">
+  <div class="container">
+    <div class="eyebrow">Case Studies</div>
+    <h2>Projects I've Worked On</h2>
+    <p class="section-sub">Real work with real results. Small projects with big impact.</p>
+    <div class="cases-grid reveal">
+      <div class="case-card">
+        <div>
+          <div class="case-label">Project 01</div>
+          <div class="case-title">Lead Follow-up Automation for a Local Clinic</div>
+          <div class="case-industry">Healthcare · Small Business</div>
+        </div>
+        <div>
+          <div class="case-sub-label">The Problem</div>
+          <p class="case-body">A clinic was losing new patient enquiries because nobody was following up quickly. Receptionist was manually sending emails one by one — taking 2+ hours daily.</p>
+          <br>
+          <div class="case-sub-label">What I Built</div>
+          <p class="case-body">An n8n workflow that captures new enquiries from their website form, saves to a Google Sheet, and immediately sends a personalised welcome email and WhatsApp message — all without anyone touching it.</p>
+        </div>
+        <div class="case-results">
+          <div class="result-item"><div class="result-num">2 hrs</div><div class="result-desc">Saved daily on manual follow-ups</div></div>
+          <div class="result-item"><div class="result-num">&lt;2 min</div><div class="result-desc">Response time (was same-day)</div></div>
+          <div class="result-item"><div class="result-num">+30%</div><div class="result-desc">More bookings confirmed</div></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div>
+          <div class="case-label">Project 02</div>
+          <div class="case-title">WhatsApp Bot for Online Store Owner</div>
+          <div class="case-industry">E-commerce · Solo Entrepreneur</div>
+        </div>
+        <div>
+          <div class="case-sub-label">The Problem</div>
+          <p class="case-body">A solo store owner was spending 4+ hours every day answering the same WhatsApp questions — "What's the price?", "Is this in stock?", "How do I order?" — taking time away from growing the business.</p>
+          <br>
+          <div class="case-sub-label">What I Built</div>
+          <p class="case-body">A simple AI-powered WhatsApp bot using n8n and OpenAI that answers product questions, sends price lists, and collects order requests automatically. Escalates to the owner only for new or complex queries.</p>
+        </div>
+        <div class="case-results">
+          <div class="result-item"><div class="result-num">70%</div><div class="result-desc">Fewer manual replies needed</div></div>
+          <div class="result-item"><div class="result-num">4 hrs</div><div class="result-desc">Saved daily for the owner</div></div>
+          <div class="result-item"><div class="result-num">24/7</div><div class="result-desc">Now available to customers</div></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div>
+          <div class="case-label">Project 03</div>
+          <div class="case-title">Social Media Auto-Posting for a Content Creator</div>
+          <div class="case-industry">Content Creation · Freelancer</div>
+        </div>
+        <div>
+          <div class="case-sub-label">The Problem</div>
+          <p class="case-body">A content creator was spending too much time manually posting the same content across Instagram and Facebook. Inconsistent posting was hurting their reach.</p>
+          <br>
+          <div class="case-sub-label">What I Built</div>
+          <p class="case-body">A Notion-to-social automation: the creator writes content once in Notion with a schedule date, and n8n automatically publishes to Instagram and Facebook at the right time — including caption, image, and hashtags.</p>
+        </div>
+        <div class="case-results">
+          <div class="result-item"><div class="result-num">3 hrs</div><div class="result-desc">Saved per week on posting</div></div>
+          <div class="result-item"><div class="result-num">2×</div><div class="result-desc">More consistent posting</div></div>
+          <div class="result-item"><div class="result-num">+40%</div><div class="result-desc">Improvement in reach</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="testimonials">
+  <div class="container">
+    <div class="eyebrow">Client Reviews</div>
+    <h2>What Clients Say</h2>
+    <p class="section-sub">Honest feedback from people I've worked with.</p>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Dilnasheen built us a simple lead automation that saved my receptionist 2 hours every single day. Very patient and explains everything clearly. Highly recommended!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div><div class="testi-name">Dr. Ayesha Khan</div><div class="testi-role">Clinic Owner, Karachi</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">The WhatsApp bot she set up for my store is amazing. Customers get replies instantly even at midnight. I can finally focus on my products instead of answering the same questions all day.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FM</div>
+          <div><div class="testi-name">Fatima Mirza</div><div class="testi-role">Online Store Owner</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">She understood exactly what I needed and delivered without making things complicated. My content now posts itself while I sleep. Great communication throughout.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ZA</div>
+          <div><div class="testi-name">Zara Ahmed</div><div class="testi-role">Content Creator</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Very professional and fast. Built exactly what we described and even suggested a few improvements we hadn't thought of. Will definitely work together again.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">HS</div>
+          <div><div class="testi-name">Hamid Shah</div><div class="testi-role">Agency Founder</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">I was worried about handing over my business workflows to someone, but Dilnasheen made the whole process easy and kept me informed at every step. Really trustworthy.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">NA</div>
+          <div><div class="testi-name">Noor Ali</div><div class="testi-role">E-commerce Seller</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Affordable, reliable, and knows her stuff. The daily report automation she built saves our team at least 30 minutes every morning. Simple but very effective work.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div><div class="testi-name">Rida Kamran</div><div class="testi-role">Operations Manager</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+  <div class="container">
+    <div class="eyebrow">Work With Me</div>
+    <h2>Let's Automate<br>Something Together</h2>
+    <p class="section-sub">
+      Have a repetitive task eating up your time? Tell me about it —
+      I'll suggest the best way to automate it. First call is free.
+    </p>
+    <div class="contact-layout reveal">
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><div class="contact-label">Email</div><div class="contact-value">dilnasheen@automation.dev</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div><div class="contact-label">Upwork</div><div class="contact-value">upwork.com/in/dilnasheen-akbar</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/dilnasheen-akbar</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-label">Location</div><div class="contact-value">Pakistan · Available Remotely</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏱️</div>
+          <div><div class="contact-label">Response Time</div><div class="contact-value">Usually within 24 hours</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" type="text" placeholder="Sara Ahmed"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" placeholder="sara@company.com"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">What do you need?</label>
+          <select class="form-select">
+            <option value="">Choose a service...</option>
+            <option>Workflow Automation</option>
+            <option>AI Chatbot</option>
+            <option>Email / Lead Automation</option>
+            <option>Social Media Automation</option>
+            <option>App Integrations</option>
+            <option>Automated Reports</option>
+            <option>Not sure — need advice</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell me about your task</label>
+          <textarea class="form-textarea" placeholder="Describe the repetitive task you want automated. What tools do you use? What result do you want?"></textarea>
+        </div>
+        <button class="submit-btn" onclick="alert('Thank you! I will reply within 24 hours.')">
+          Send Message →
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Dilnasheen<span>.</span></div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#workflows">Workflows</a>
+        <a href="#cases">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 Dilnasheen Akbar · AI Automation Specialist</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
